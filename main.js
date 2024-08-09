@@ -12,26 +12,35 @@ library.push(book1)
 library.push(book2)
 library.push(book3)
 library.push(book4)
-
+console.log(library)
 //Update the Availability of a Book:
-library[2].available = true
-
+ library[2].available = true
+console.log(library)
 //Remove Pride and Prejudice from the Library:
-library.splice(3,1)
+library.splice(3,1);
+console.log(library)
 
 //Check if a Book is in the Library:
-// for(let title in library){
-//     let result = library.ti
-//     console.log(result)
-// }
-//let result = library.includes("The Great Gatsby");
-// for(let i=0; i<library.length; i++)
-// {
-// if(library[i].title == "The Great Gatsby"){
-//     console.log("The Great Gatsby is available")
-// }
-// else{
-//     console.log("The Great Gatsby is not available")
-// }
-// }'
+
+for(let i=0; i<library.length; i++)
+{
+if(library[i].title.includes("The Great Gatsby")){
+    console.log("The Great Gatsby is available");
+}
+}
+//Borrow the First Book:
+// Update its available status to false before removing it from the array
+library[0].available = false;
 console.log(library)
+//Remove the first book from the library array using the shift method
+ library.shift()
+console.log(library)
+//... and then display the updated book details.
+//console.log(library)
+//Add a New Book to the Start of the Library:
+let book5 = {title: "The Catcher in the Rye", author: "J.D. Salinger", yearPublished: 1951, available: true}
+library.unshift(book5);
+console.log(library);
+//Create a new array called newArrivals containing only the last two books in the library array using the slice method.
+let newArrivals = library.slice(1,3);
+console.log(newArrivals);
